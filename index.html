@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Miracles: Act for Impact | Ages 12+ Student-Led Initiative</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sky-dark: #050B14;
+            --sky-deep: #0D1B2A;
+            --pastel-blue: #A0D3F8;
+            --emerald-green: #34D399;
+            --soft-gold: #FDE68A;
+            --bright-gold: #FBBF24;
+            --accent-red: #EF4444;
+            --text-light: #F9FAFB;
+        }
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: var(--sky-dark);
+            color: var(--text-light);
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4 { font-family: 'Unbounded', sans-serif; }
+        .starfield {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(white 1px, transparent 1px);
+            background-size: 50px 50px; opacity: 0.15; z-index: -1;
+        }
+        .glow-soft { box-shadow: 0 0 15px rgba(160, 211, 248, 0.4); }
+        .glow-gold { box-shadow: 0 0 20px rgba(251, 191, 36, 0.6); }
+        .btn-base { transition: all 0.2s ease-in-out; }
+        .btn-base:hover { transform: translateY(-2px); filter: brightness(1.05); }
+        .btn-primary { background-color: var(--emerald-green); color: var(--sky-dark); }
+        .btn-outline { border: 2px solid var(--pastel-blue); color: var(--pastel-blue); }
+        .tab-btn.active { border-color: var(--emerald-green); color: var(--emerald-green); font-weight: 600; }
+        .strict-ban { border: 2px solid var(--accent-red); background-color: rgba(239, 68, 68, 0.05); }
+        
+        /* Majestic Logo SVG styles */
+        .majestic-logo {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .logo-halo { fill: #FFE176; filter: drop-shadow(0 0 5px #FBBF24); }
+        .logo-wings { fill: #FDFDFD; opacity: 0.9; }
+        .logo-heart { fill: #EF4444; }
+
+        /* Animation for shimmering halo */
+        @keyframes shimmer {
+            0% { filter: drop-shadow(0 0 4px #FBBF24); }
+            50% { filter: drop-shadow(0 0 9px #FDE68A); }
+            100% { filter: drop-shadow(0 0 4px #FBBF24); }
+        }
+        .logo-halo { animation: shimmer 3s infinite alternate; }
+
+        .header-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            justify-content: center;
+        }
+        .scaled-logo {
+            width: 140px;
+            height: 140px;
+        }
+        @media (max-width: 640px) {
+            .scaled-logo { width: 90px; height: 90px; }
+            .header-logo-container { gap: 1rem; margin-bottom: 2rem; }
+        }
+    </style>
+</head>
+<body class="relative min-h-screen">
+    <div class="starfield"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-sky-dark/95 sticky top-0 z-50 border-b border-pastel-blue/20 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <svg class="majestic-logo w-10 h-10" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse class="logo-halo" cx="100" cy="35" rx="60" ry="12"/>
+                    <path class="logo-wings" d="M100,50 C60,50 20,70 10,110 C5,130 15,150 35,160 C45,165 55,165 65,160 C80,150 90,120 100,90 Z" transform="translate(-10,0)"/>
+                    <path class="logo-wings" d="M100,50 C140,50 180,70 190,110 C195,130 185,150 165,160 C155,165 145,165 135,160 C120,150 110,120 100,90 Z" transform="translate(10,0)"/>
+                    <path class="logo-heart" d="M100,105 C95,100 85,100 80,105 C75,110 75,118 80,123 L100,143 L120,123 C125,118 125,110 120,105 C115,100 105,100 100,105 Z" transform="scale(0.8) translate(25,18)"/>
+                </svg>
+                <span class="text-xl font-bold text-pastel-blue">Medical Miracles</span>
+            </div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUQw0W_ww3TPhffow2Itn3qg1eKHfSiVKWPuC8ZhBIutjETQ/viewform?usp=dialog" target="_blank" class="btn-base btn-primary text-xs px-4 py-2 rounded-full font-medium glow-soft">Join Us (Ages 12+)</a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="py-20 md:py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            
+            <div class="header-logo-container">
+                <svg class="majestic-logo scaled-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse class="logo-halo" cx="100" cy="35" rx="60" ry="12"/>
+                    <path class="logo-wings" d="M100,50 C60,50 20,70 10,110 C5,130 15,150 35,160 C45,165 55,165 65,160 C80,150 90,120 100,90 Z" transform="translate(-10,0)"/>
+                    <path class="logo-wings" d="M100,50 C140,50 180,70 190,110 C195,130 185,150 165,160 C155,165 145,165 135,160 C120,150 110,120 100,90 Z" transform="translate(10,0)"/>
+                    <path class="logo-heart" d="M100,105 C95,100 85,100 80,105 C75,110 75,118 80,123 L100,143 L120,123 C125,118 125,110 120,105 C115,100 105,100 100,105 Z" transform="scale(0.8) translate(25,18)"/>
+                </svg>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-pastel-blue tracking-tight leading-tight">Act for Impact</h1>
+            </div>
+
+            <div class="bg-emerald-green/10 text-emerald-green border border-emerald-green/30 px-6 py-2 rounded-full inline-block mb-6 text-sm font-medium">Open to Everyone Ages 12+ (All Career Paths Welcome!)</div>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-6 font-light">Medical Miracles is a <strong class="text-pastel-blue">student-led initiative run by high schoolers</strong> dedicated to supporting long-term hospitalized children and teens.</p>
+            <p class="text-base md:text-lg text-emerald-green max-w-2xl mx-auto mb-10 font-normal bg-sky-deep/60 py-3 px-6 rounded-2xl border border-emerald-green/20">🌟 You do <strong>NOT</strong> need to be going into the medical field to join! Membership is open to everyone who wants to give back, earn volunteer hours, and support young hospital patients.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUQw0W_ww3TPhffow2Itn3qg1eKHfSiVKWPuC8ZhBIutjETQ/viewform?usp=dialog" target="_blank" class="btn-base btn-primary px-8 py-3 rounded-xl font-semibold text-lg flex items-center gap-2 glow-gold">Become a Member</a>
+                <a href="#initiatives" class="btn-base btn-outline px-8 py-3 rounded-xl font-semibold text-lg">Our Initiatives</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Strict Guidelines Alert -->
+    <section class="max-w-5xl mx-auto px-6 py-10 mb-20">
+        <div class="strict-ban p-8 rounded-3xl flex flex-col md:flex-row items-center gap-6 border-2 border-red-400">
+            <div class="text-accent-red">
+                <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            </div>
+            <div>
+                <h4 class="text-2xl font-bold text-accent-red mb-2">STRICT Sanitation & Safety Policy</h4>
+                <p class="text-gray-200 text-sm md:text-base">All donations must be <strong class="text-white">100% BRAND NEW in ORIGINAL FACTORY PACKAGING</strong>. We <strong class="text-white">CANNOT accept</strong> food, candy, used items, high-risk objects (choking/allergy hazards), scary themes, weapons, or Orbeez/water beads. Help us keep pediatric patients safe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact & Wishlist Simulator -->
+    <section id="initiatives" class="py-20 px-6 bg-sky-deep/40 rounded-[3rem] my-10 border-t border-pastel-blue/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="text-pastel-blue uppercase tracking-widest text-sm mb-3">Our Work</div>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">Help Us Support the Youth</h2>
+                <p class="text-gray-300 text-lg max-w-xl mx-auto mt-6">Through CareKit drives and Officer-led bake sales benefiting <strong class="text-emerald-green">Phoenix Children's Hospital</strong>.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <!-- Wishlist Simulator -->
+                <div class="bg-sky-dark/80 p-8 rounded-3xl border border-pastel-blue/20">
+                    <h3 class="text-2xl font-bold text-pastel-blue mb-8">Build a Digital CareKit</h3>
+                    
+                    <div class="flex border-b border-pastel-blue/20 mb-6 gap-2">
+                        <button onclick="switchTab('children')" class="tab-btn children active px-4 py-2 border-b-2 border-transparent text-gray-400">Children's Wishlist</button>
+                        <button onclick="switchTab('teens')" class="tab-btn teens px-4 py-2 border-b-2 border-transparent text-gray-400">Teens' Wishlist</button>
+                    </div>
+
+                    <!-- Items Display -->
+                    <div id="children-wishlist" class="wishlist-content space-y-3">
+                        <div class="bg-sky-deep p-4 rounded-xl flex items-center justify-between">
+                            <span class="font-medium">LEGO Sets (no scary figures)</span>
+                            <span class="text-sm text-pastel-blue">NEW Sealed</span>
+                        </div>
+                        <div class="bg-sky-deep p-4 rounded-xl flex items-center justify-between">
+                            <span class="font-medium">Multi-Pack Play-Doh (Sealed)</span>
+                            <span class="text-sm text-pastel-blue">Original Pkg</span>
+                        </div>
+                        <div class="bg-sky-deep p-4 rounded-xl flex items-center justify-between">
+                            <span class="font-medium">Toddler Musical Toys</span>
+                            <span class="text-sm text-emerald-green">BRAND NEW</span>
+                        </div>
+                        <div class="bg-sky-deep p-4 rounded-xl flex items-center justify-between">
+                            <span class="font-medium">Barbie Doll Sets</span>
+                            <span class="text-sm text-emerald-green">BRAND NEW</span>
+                        </div>
+                        <div class="bg-sky-deep p-4 rounded-xl flex items-center justify-between">
+                            <span class="font-medium">Toddler & Kid Friendly Board Books</span>
+                            <span class="text-sm text-pastel-blue">Original Pkg</span>
+                        </div>
+                    </div>
+
+                    <div id="teens-wishlist" class="wishlist-content space-y-3 hidden">
+                        <div class="bg-sky-deep p-4 rounded-xl flex items-center justify-between">
+                            <span class="font-medium">$10/$25 Gift Cards (Major Retail/Food)</span>
+                            <span class="text-sm text-emerald-green">$10-$25</span>
+                        </div>
+                        <div class="bg-sky-deep p-4 rounded-xl flex items-center justify-between">
+                            <span class="font-medium">Adult Coloring Books (No Weapons) & Gel Pens</span>
+                            <span class="text-sm text-pastel-blue">Clean Artwork</span>
+                        </div>
+                        <div class="bg-sky-deep p-4 rounded-xl flex items-center justify-between">
+                            <span class="font-medium">Fidget Spinners</span>
+                            <span class="text-sm text-emerald-green">BRAND NEW</span>
+                        </div>
+                        <div class="bg-sky-deep p-4 rounded-xl flex items-center justify-between">
+                            <span class="font-medium">Portable Fans & Body Care Essentials</span>
+                            <span class="text-sm text-pastel-blue">Sealed Goods</span>
+                        </div>
+                        <div class="bg-sky-deep p-4 rounded-xl flex items-center justify-between">
+                            <span class="font-medium">Relaxing Hand, Foot & Eye Masks</span>
+                            <span class="text-sm text-emerald-green">BRAND NEW</span>
+                        </div>
+                        <div class="bg-sky-deep p-4 rounded-xl flex items-center justify-between">
+                            <span class="font-medium">Board Games for Teens</span>
+                            <span class="text-sm text-pastel-blue">Original Pkg</span>
+                        </div>
+                    </div>
+
+                    <div class="strict-ban mt-8 p-6 rounded-2xl border-l-4 border-accent-red text-accent-red flex items-start gap-4">
+                        <svg class="w-8 h-8 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        <p class="text-sm text-gray-100">ALL items must be brand new in original packaging, NO food/candy, NO used items, NO scary themes or Orbeez/water beads.</p>
+                    </div>
+
+                </div>
+
+                <!-- Community Impact -->
+                <div class="bg-sky-deep/60 p-10 rounded-3xl border border-emerald-green/20">
+                    <h3 class="text-2xl font-bold text-emerald-green mb-8">Giving Back to Community</h3>
+                    <div class="space-y-6 text-gray-300">
+                        <div class="flex gap-4 items-start bg-sky-dark/40 p-5 rounded-xl">
+                            <svg class="w-8 h-8 text-pastel-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <p>Members gain <strong class="text-white">volunteer hours</strong> and <strong class="text-white">leadership opportunities</strong> by participating in drives and awareness campaigns—no matter what career path you plan to pursue!</p>
+                        </div>
+                        <div class="flex gap-4 items-start bg-sky-dark/40 p-5 rounded-xl">
+                            <svg class="w-8 h-8 text-emerald-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                            <p>All bake sale proceeds directly benefit <strong class="text-emerald-green font-medium">Phoenix Children's Hospital</strong> (PCH), funding patient comfort kits and playroom essentials.</p>
+                        </div>
+                        <div class="flex gap-4 items-start bg-sky-dark/40 p-5 rounded-xl">
+                            <svg class="w-8 h-8 text-pastel-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <p>Officer roles involve planning large drives and leading bake sales, making a tangible difference for PCH patients.</p>
+                        </div>
+                    </div>
+                    <div class="mt-12 text-center p-6 bg-emerald-green/10 rounded-xl border border-emerald-green/20">
+                        <p class="text-white">Ready to make a real difference?</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUQw0W_ww3TPhffow2Itn3qg1eKHfSiVKWPuC8ZhBIutjETQ/viewform?usp=dialog" target="_blank" class="btn-base btn-primary px-6 py-2 rounded-lg font-medium inline-block mt-4 text-sm">Join Medical Miracles Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Officer Section & Application Info -->
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-extrabold text-white mb-6">Officers & Leadership</h2>
+                <p class="text-gray-300 mb-5">Our Officers are dedicated high school leaders who plan the logistical aspects of our drives and direct our bake sales. This level of involvement is a powerful way to <strong class="text-emerald-green">build leadership experience while serving Phoenix Children's Hospital</strong>.</p>
+                <p class="text-gray-300 text-sm">Bake Sales & Event Directing are hosted by Officers only.</p>
+            </div>
+            <div class="bg-sky-deep p-8 rounded-3xl border border-pastel-blue/20 text-center">
+                <svg class="w-16 h-16 text-emerald-green mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+                <h3 class="text-xl font-bold text-white mb-3">2024-2025 Officer Applications</h3>
+                <div class="bg-accent-red/10 text-accent-red border border-accent-red/30 px-6 py-2 rounded-full inline-block mb-6 font-medium">Currently CLOSED</div>
+                <p class="text-gray-300 text-sm max-w-sm mx-auto">Applications for this school year are closed. They will reopen <strong class="text-pastel-blue">next school year</strong> and are strictly available to <strong class="text-emerald-green">high schoolers who have been active members participating in the organization for at least 1 full year</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sky-dark py-12 px-6 border-t border-pastel-blue/20 mt-20">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="flex items-center gap-3 justify-center mb-8">
+                <svg class="majestic-logo w-10 h-10" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse class="logo-halo" cx="100" cy="35" rx="60" ry="12"/>
+                    <path class="logo-wings" d="M100,50 C60,50 20,70 10,110 C5,130 15,150 35,160 C45,165 55,165 65,160 C80,150 90,120 100,90 Z" transform="translate(-10,0)"/>
+                    <path class="logo-wings" d="M100,50 C140,50 180,70 190,110 C195,130 185,150 165,160 C155,165 145,165 135,160 C120,150 110,120 100,90 Z" transform="translate(10,0)"/>
+                    <path class="logo-heart" d="M100,105 C95,100 85,100 80,105 C75,110 75,118 80,123 L100,143 L120,123 C125,118 125,110 120,105 C115,100 105,100 100,105 Z" transform="scale(0.8) translate(25,18)"/>
+                </svg>
+                <span class="text-xl font-bold text-white">Medical Miracles: Act for Impact</span>
+            </div>
+            <p class="text-gray-400 text-sm max-w-xl mx-auto mb-6">A student-led initiative open to everyone ages 12+ supporting long-term hospitalized children and teens at Phoenix Children's Hospital. All donations must adhere strictly to safety guidelines.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUQw0W_ww3TPhffow2Itn3qg1eKHfSiVKWPuC8ZhBIutjETQ/viewform?usp=dialog" target="_blank" class="text-emerald-green text-sm hover:underline">Membership Application (Ages 12+)</a>
+            <div class="mt-10 text-xs text-gray-600">&copy; 2024 Medical Miracles: Act for Impact. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(type) {
+            document.querySelectorAll('.wishlist-content').forEach(content => content.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(type + '-wishlist').classList.remove('hidden');
+            document.querySelector('.tab-btn.' + type).classList.add('active');
+        }
+    </script>
+</body>
+</html>
